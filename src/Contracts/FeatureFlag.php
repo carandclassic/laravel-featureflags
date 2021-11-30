@@ -7,7 +7,8 @@ namespace CarAndClassic\LaravelFeatureFlags\Contracts;
 interface FeatureFlag
 {
     /**
-     * @param mixed...$args
+     * @param mixed ...$args
+     * @return bool
      */
     public function enabled(...$args): bool;
 }
