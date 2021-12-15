@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CarAndClassic\LaravelFeatureFlags\Tests\traits;
+namespace CarAndClassic\LaravelFeatureFlags\Tests\Traits;
 
 
 trait InteractsWithFeatures
