@@ -24,5 +24,10 @@ trait InteractsWithFeatures
             ->method('enabled')
             ->withAnyParameters()
             ->willReturn($value);
+
+        $mock->expects($this->any())
+            ->method('disabled')
+            ->withAnyParameters()
+            ->willReturn(!$value);
     }
 }
