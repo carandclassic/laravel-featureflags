@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace CarAndClassic\LaravelFeatureFlags\Tests\Traits;
 
-
 trait InteractsWithFeatures
 {
     private function enableFeature(string $class): void
