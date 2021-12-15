@@ -25,6 +25,5 @@ trait InteractsWithFeatures
             ->willReturn($value);
 
         app()->instance($class, $mock);
-
     }
 }
