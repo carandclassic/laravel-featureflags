@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CarAndClassic\LaravelFeatureFlags\Tests\Traits;
+namespace CarAndClassic\LaravelFeatureFlags\Traits;
 
 trait InteractsWithFeatures
 {
@@ -18,12 +18,11 @@ trait InteractsWithFeatures
 
     private function mockFeatureResponse(string $class, bool $value): void
     {
-        $mock = $this->createMock($class);
+        app()->instance($class, $mock = $this->createMock($class));
+
         $mock->expects($this->any())
             ->method('enabled')
             ->withAnyParameters()
             ->willReturn($value);
-
-        app()->instance($class, $mock);
     }
 }
