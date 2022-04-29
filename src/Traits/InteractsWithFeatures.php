@@ -4,16 +4,22 @@ declare(strict_types=1);
 
 namespace CarAndClassic\LaravelFeatureFlags\Traits;
 
+use Illuminate\Support\Arr;
+
 trait InteractsWithFeatures
 {
-    private function enableFeature(string $class): void
+    private function enableFeature(array|string $class): void
     {
-        $this->mockFeatureResponse($class, true);
+        foreach (Arr::wrap($class) as $featureClass) {
+            $this->mockFeatureResponse($featureClass, true);
+        }
     }
 
-    private function disableFeature(string $class): void
+    private function disableFeature(array|string $class): void
     {
-        $this->mockFeatureResponse($class, false);
+        foreach (Arr::wrap($class) as $featureClass) {
+            $this->mockFeatureResponse($featureClass, false);
+        }
     }
 
     private function mockFeatureResponse(string $class, bool $value): void
